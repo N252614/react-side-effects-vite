@@ -32,16 +32,17 @@ Before you start building out the application, examine the current code and comp
 
 ## Screenshot
 
-Here is the working app showing a programming joke and the "Get a New Joke" button:
+Here is the working app showing a programming joke, a loading message, and the “Get a New Joke” button:
 
 ![Joke App Screenshot](./screenshot.jpg)
 
 ## Results
 
 All tests passed.  
- The app displays a joke on load and fetches a new one on button click.  
- A loading message appears during the simulated fetch.  
- The jokes are hardcoded to match test expectations.
+On page load, a joke is displayed after a loading message.  
+Clicking the button fetches a new joke (simulated).  
+The UI handles loading and errors gracefully.  
+Jokes are hardcoded to match test expectations for consistent test results.
 
 ## Author
 

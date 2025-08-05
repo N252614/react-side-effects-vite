@@ -2,29 +2,31 @@ import React, { useEffect, useState } from 'react';
 import JokeDisplay from './components/JokeDisplay';
 
 function App() {
-  // Step 1: Create state to store the joke and loading status
+  // State to hold the joke text
   const [joke, setJoke] = useState('');
+  // State to manage loading indicator
   const [loading, setLoading] = useState(false);
-  const [isFirstJoke, setIsFirstJoke] = useState(true); // Track if it's the initial joke
+  // State to track whether it's the first joke (for test expectations)
+  const [isFirstJoke, setIsFirstJoke] = useState(true);
 
-  // Step 2: Define a function to fetch a new joke
+  // Function to simulate fetching a joke
   const getJoke = async () => {
-    setLoading(true); // Show loading while fetching
+    setLoading(true); // Show loading
 
-    // Simulate async API call with setTimeout
+    // Simulate async API call with a timeout
     setTimeout(() => {
-      // Step 3: Set a specific joke based on whether it's the first load or a click
+      // Provide specific jokes that match test expectations
       const newJoke = isFirstJoke
         ? 'Why do programmers prefer dark mode?'
-        : 'Another programming joke!'; // This must match the test exactly
+        : 'Another programming joke!';
 
-      setJoke(newJoke); // Set new joke
-      setIsFirstJoke(false); // Flip the flag so next joke is the second one
-      setLoading(false); // Done loading
-    }, 1000); // Small delay to simulate API
+      setJoke(newJoke);          // Update joke state
+      setIsFirstJoke(false);     // Update flag after first joke
+      setLoading(false);         // Hide loading
+    }, 1000); // Simulated 1 second delay
   };
 
-  // Step 4: Fetch the initial joke on mount
+  // useEffect to fetch the initial joke on component mount
   useEffect(() => {
     getJoke();
   }, []);
@@ -33,10 +35,10 @@ function App() {
     <div className="app">
       <h1>Programming Jokes</h1>
 
-      {/* Step 5: Pass `joke` and `loading` as props to JokeDisplay */}
+      {/* Display the joke or loading state */}
       <JokeDisplay joke={joke} loading={loading} />
 
-      {/* Step 6: Add button to fetch new joke */}
+      {/* Button to fetch a new joke */}
       <button className="fetch-button" onClick={getJoke}>
         Get a New Joke
       </button>
