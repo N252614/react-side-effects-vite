@@ -29,3 +29,20 @@ Before you start building out the application, examine the current code and comp
 - Manage component state using the `useState` hook.
 - Keep components modular and reusable.
 - Remove unnecessary console logs and commented-out code before submission.
+
+## Screenshot
+
+Here is the working app showing a programming joke and the "Get a New Joke" button:
+
+![Joke App Screenshot](./screenshot.jpg)
+
+## Results
+
+All tests passed.  
+ The app displays a joke on load and fetches a new one on button click.  
+ A loading message appears during the simulated fetch.  
+ The jokes are hardcoded to match test expectations.
+
+## Author
+
+Built by Nataliya Katina as part of the React Side Effects Lab.
